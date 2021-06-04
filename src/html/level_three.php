@@ -29,7 +29,7 @@ class level_three
                     $link .= 'id="'.$id.'" ';
                     $link .= 'class="lvl3 lvl3_item lvl3_item_'.$item.' '.$first.' ';
                     $link .= 'relative w-full mb-4 bg-gray-100 rounded-2xl h-16 flex fill-gray-800 ';
-                    $link .= 'hover:bg-green-400 hover:text-white hover:fill-white"';
+                    $link .= 'hover:bg-green-500 hover:text-white hover:fill-white"';
                 $link .= '>';
         
                 return $link;
@@ -72,7 +72,7 @@ class level_three
 
                     public function level3_hover()
                     {
-                        $hover =  '<div class="lvl3_hover absolute top-0 right-0 bg-green-400 w-32 h-full opacity-0 rounded-r-2xl inline-block">';
+                        $hover =  '<div class="lvl3_hover absolute top-0 right-0 bg-green-500 w-32 h-full opacity-0 rounded-r-2xl inline-block">';
                         $hover .= '<svg class="fill-white w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
                         $hover .= '</div>'; 
                         return $hover;
@@ -81,7 +81,7 @@ class level_three
                     public function level3_image($post_id)
                     {
                         $url = get_the_post_thumbnail_url($post_id);
-                        return '<div class="lvl3_image bg-no-repeat bg-contain bg-center w-28 h-14 m-1 rounded-2xl lazyload" style="background-image:url(\''.$url.'\')"></div>';
+                        return '<div class="lvl3_image bg-no-repeat bg-cover bg-center w-28 h-14 m-1 rounded-2xl lazyload" style="background-image:url(\''.$url.'\')"></div>';
                     }
 
                     

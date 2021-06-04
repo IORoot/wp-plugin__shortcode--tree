@@ -75,6 +75,9 @@ class render
     }
 
 
+
+
+
     private function level_one()
     {
         $this->html[] = $this->one->open_flex_row($this->level_one_loop_count, $this->level_one_last);
@@ -82,14 +85,27 @@ class render
             /**
              * Level One Parts
              */ 
-            $this->html[] = $this->one->open_level1_box($this->level_one_value['slug'], $this->level_one_value['term_id']);
+            
+            $this->html[] = $this->one->level1_checkbox($this->level_one_value['slug']);
 
-                $this->html[] = $this->one->level1_hover();
-                $this->html[] = $this->one->level1_glyph($this->level_one_value['acf']["meta_fields"][0]["meta_field_value"]);
-                $this->html[] = $this->one->level1_title($this->level_one_value['name']);
+            $this->html[] = $this->one->open_level1_label($this->level_one_value['slug']);
+
+                $this->html[] = $this->one->level1_content_open();
+                    
+                    $this->html[] = $this->one->level1_title($this->level_one_value['name'], count($this->level_one_value['children']));
+                    $this->html[] = $this->one->level1_open_link($this->level_one_value['term_id']);
+                    $this->html[] = $this->one->level1_hover();
+                    $this->html[] = $this->one->level1_glyph($this->level_one_value['acf']["meta_fields"][0]["meta_field_value"]);
+                    $this->html[] = $this->one->level1_close_link();
+
+                $this->html[] = $this->one->level1_content_close();
+
                 $this->html[] = $this->one->level1_node();
+                
+            $this->html[] = $this->one->close_level1_label();
 
-            $this->html[] = $this->one->close_level1_box();
+
+
 
 
             /**
@@ -116,6 +132,8 @@ class render
 
 
 
+
+
     private function level_two()
     {
         /**
@@ -128,7 +146,7 @@ class render
             $this->html[] = $this->two->open_level2_label($this->level_two_value['slug']);
 
                 $this->html[] = $this->two->level2_arrowhead();
-                $this->html[] = $this->two->level2_title($this->level_two_value['name']);
+                $this->html[] = $this->two->level2_title($this->level_two_value['name'], $this->level_two_value["count"]);
                 $this->html[] = $this->two->level2_open_link($this->level_two_value['term_id']);
                 $this->html[] = $this->two->level2_hover();
                 $this->html[] = $this->two->level2_image($this->level_two_value["acf"]["featured_image"]["sizes"]["thumbnail"]);

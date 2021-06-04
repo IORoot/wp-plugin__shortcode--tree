@@ -8,7 +8,7 @@ class level_two
 
     public function open_flex_col()
     {
-        return '<div class="lvl2 lvl2_col w-full flex flex-col ">';
+        return '<div class="lvl2 lvl2_col w-full flex-col hidden">';
     }
 
     public function close_flex_col()
@@ -53,12 +53,24 @@ class level_two
 
                             public function level2_checkbox($id)
                             {
-                                return '<input class="absolute opacity-0 z-0" type="checkbox" id="'.$id.'">';
+                                return '<input class="lvl2_checkbox absolute opacity-0 z-0" type="checkbox" id="'.$id.'">';
                             }
 
-                            public function level2_title($name)
+                            // public function level2_title($name)
+                            // {
+                            //     return '<div class="font-thin font-xs my-auto text-center flex-1">'.$name.'</div>';
+                            // }
+
+                            public function level2_title($name, $count = null)
                             {
-                                return '<div class="font-thin font-xs my-auto text-center flex-1">'.$name.'</div>';
+                                $title = '<div class="font-thin font-xs my-auto text-center flex-1">';
+                                $title .=   $name;
+                                $title .=   '<div class="text-xs w-full text-center">';
+                                $title .=       $count . ' lessons';
+                                $title .=   '</div>';
+                                $title .= '</div>';
+
+                                return $title;
                             }
 
                             public function level2_open_link($term_id)
@@ -75,7 +87,7 @@ class level_two
                             public function level2_hover()
                             {
                                 $hover =  '<div class="lvl2_hover absolute top-0 left-0 bg-white w-full h-full opacity-0 rounded-2xl inline-block">';
-                                $hover .= '<svg class="fill-green-500 w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
+                                    $hover .= '<svg class="fill-green-500 w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
                                 $hover .= '</div>'; 
                                 return $hover;
                             }

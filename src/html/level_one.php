@@ -26,42 +26,77 @@ class level_one
                 return '</div>';
             }
 
-            
 
-                    public function open_level1_box($id, $term_id)
+                    public function level1_checkbox($id)
                     {
-                        $url = get_term_link($term_id);
-                        return '<a href="'.$url.'" id="'.$id.'" class="lvl1 lvl1_cell w-1/6 mr-20 relative bg-gray-200 rounded-xl h-16 flex p-1 fill-gray-800 hover:bg-green-500 hover:text-gray-100 hover:fill-white">';
+                        return '<input class="lvl1_checkbox absolute opacity-0 z-0" type="checkbox" id="'.$id.'">';
                     }
 
-                    public function close_level1_box()
+
+                    public function open_level1_label($id)
                     {
-                        return '</a>';
+                        return '<label for="'.$id.'" class="lvl1 lvl1_item w-full mb-4 relative bg-gray-200 rounded-2xl h-16 flex p-1 fill-gray-800 hover:bg-green-500 hover:text-white hover:fill-white cursor-pointer transition-all">';
                     }
 
+                    public function close_level1_label()
+                    {
+                        return '</label>';
+                    }
+
+
+                            public function level1_content_open()
+                            {
+                                return '<div class="m-auto flex">';
+                            }
+
+                            public function level1_content_close()
+                            {
+                                return '</div>';
+                            }
 
 
                             public function level1_glyph($name)
                             {
-                                $glyph =  '<svg class="w-10 h-10 ml-4 mr-2 my-2">';
+                                $glyph =  '<svg class="w-10 h-10">';
                                     $glyph .= '<use xlink:href="#'.$name.'"></use>';
                                 $glyph .= '</svg>';
 
                                 return $glyph;
                             }
                             
-                            public function level1_title($name)
+                            public function level1_title($name, $count)
                             {
-                                return '<div class="font-thin font-xs my-auto">'.$name.'</div>';
+                                $title = '<div class="font-thin font-xs my-auto px-2">';
+                                $title .=   $name;
+                                $title .=   '<div class="text-xs w-full text-center">';
+                                $title .=       $count . ' series';
+                                $title .=   '</div>';
+                                $title .= '</div>';
+
+                                return $title;
                             }
 
+
+                            public function level1_open_link($term_id)
+                            {
+                                $url = get_term_link($term_id);
+                                return '<a href="'.$url.'" class="relative">';
+                            }
+
+                            public function level1_close_link()
+                            {
+                                return '</a>';
+                            }
+
+                            
                             public function level1_hover()
                             {
-                                $hover =  '<div class="lvl1_hover absolute top-0 left-0 bg-green-500 w-full h-full opacity-0 rounded-2xl inline-block">';
-                                $hover .= '<svg class="fill-white w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
+                                $hover =  '<div class="lvl1_hover absolute top-0 left-0 bg-white w-full h-full opacity-0 rounded inline-block">';
+                                $hover .= '<svg class="fill-green-500 w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
                                 $hover .= '</div>'; 
                                 return $hover;
                             }
+
 
                             public function level1_node()
                             {

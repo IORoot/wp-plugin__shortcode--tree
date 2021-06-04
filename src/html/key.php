@@ -18,7 +18,7 @@ class key
 
     public function open_header1_col()
     {
-        return '<div class="header_col header_1 w-1/6 h-full border-r border-gray-200 border-dashed">';
+        return '<div class="header_col header_1 w-1/6 flex-1 h-full border-r border-gray-200 border-dashed">';
     }
 
     public function close_header1_col()
@@ -41,7 +41,7 @@ class key
 
     public function open_header2_col()
     {
-        return '<div class="header_col header_2 flex-1 h-full border-r border-gray-200 border-dashed ">';
+        return '<div class="header_col header_2 flex-1 h-full border-r border-gray-200 border-dashed hidden">';
     }
 
     public function close_header2_col()

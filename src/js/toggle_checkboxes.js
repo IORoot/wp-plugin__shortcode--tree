@@ -7,7 +7,27 @@ function toggle_checkboxes(bx) {
     }
 }
 
-document.addEventListener("input", function(evnt){
-    var episodes = document.querySelector('.header_3');
-    episodes.classList.remove('hidden');
-});
+/**
+ * Listen for checkbox click resize header_1 and open header_2
+ */
+const lvl1_rows = document.querySelectorAll('.lvl1_row');
+for (const lvl1_row of lvl1_rows) {
+    lvl1_row.addEventListener('click', function(event) {
+        var categories = document.querySelector('.header_1');
+        categories.classList.remove('flex-1');
+    
+        var series = document.querySelector('.header_2');
+        series.classList.remove('hidden');
+    })
+}
+
+/**
+ * Listen for any checkbox and open header_3
+ */
+const lvl2_rows = document.querySelectorAll('.lvl2_row');
+for (const lvl2_row of lvl2_rows) {
+    lvl2_row.addEventListener('click', function(event) {
+        var episodes = document.querySelector('.header_3');
+        episodes.classList.remove('hidden');
+    })
+}
