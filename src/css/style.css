@@ -1,0 +1,221 @@
+
+    
+	/* 
+	 * ----------- LEVEL 1 <--> LEVEL 2 ------------------------------------------------------------------------------------------------
+	 */
+	
+	/* 
+	 * Full-width horizontal line
+	 * Single - only one 2nd level in list
+	 * first  - more than one in list. this is first.
+     * 
+     *      LVL1 -------- LVL2
+	 */
+	.lvl2.single > .lvl2_item:before,
+	.lvl2.first  > .lvl2_item:before {
+		content: "";
+		width: 5rem;
+		position: absolute;
+        border-top: dashed #22C55E 1px;
+		left: -5rem;
+		top: 2rem;
+	}	
+
+	/*
+	 * Half-width horizontal line
+	 * Notfirst - all items after first.
+	 * Last - Last in list (as long as not single or first)
+     * 
+     * LVL1 -------- LVL2
+     *          
+     *           ___ LVL2
+	 */
+	.lvl2.notfirst > .lvl2_item:before,
+	.lvl2.last     > .lvl2_item:before {
+		content: "";
+		width: 2.5rem;
+		position: absolute;
+		border-top: dashed #22C55E 1px;
+		left: -2.5rem;
+		top: 2rem;
+	}
+	
+	/*
+	 * Full Height vertical line
+	 * First - In a list of more than 1. This is first.
+	 * Notfirst - Multiple list items, not first.
+     *
+     * LVL1 -------- LVL2
+     *          |
+     *          |___ LVL2
+	 */
+	.lvl2.first    > .lvl2_item:after,
+	.lvl2.notfirst > .lvl2_item:after {
+		content: "";
+		height: 100%;
+		position: absolute;
+		border-left: dashed #22C55E 1px;
+		left: -2.5rem;
+		top: 2rem;
+	}
+
+	/* 
+	 * ----------- LEVEL 2 <--> LEVEL 3 ------------------------------------------------------------------------------------------------
+	 */
+
+	/* 
+	 * Full-width horizontal line 
+	 * Single - only one 2nd level in list
+	 * first  - more than one in list. this is first.
+     *
+     * LVL1 -------- LVL2 -------- LVL3
+     *          |
+     *          |___ LVL2
+	 */
+	.lvl3_item.single:before,
+	.lvl3_item.first:before {
+		content: "";
+		width: 5rem;
+		position: absolute;
+		border-top: dashed #22C55E 1px;
+		left: -5rem;
+		top: 2rem;
+	}	
+
+
+
+	/*
+	 * Full Height vertical line
+     *
+     * LVL1 -------- LVL2 ------|  LVL3
+     *          |                  LVL3
+     *          |___ LVL2          LVL3
+     *                             LVL3
+	 */
+	.lvl3_item.first:after {
+        content: "";
+		width: 1px;
+		height: 100%;
+		position: absolute;
+		border-left: dashed #22C55E 1px;
+		left: 2.6rem;
+		top: 2rem;
+    }
+
+
+	/*
+	 * Full Height vertical line
+     *
+     * LVL1 -------- LVL2 ------|  LVL3
+     *          |               |  LVL3
+     *          |___ LVL2       |  LVL3
+     *                             LVL3
+	 */
+	.lvl3_item.notfirst:after {
+		content: "";
+		width: 1px;
+		height: 200%;
+		position: absolute;
+		border-left: dashed #22C55E 1px;
+		left: 2.6rem;
+	}
+
+	/*
+	 * Half-Height vertical line
+     *
+     * LVL1 -------- LVL2 ------|  LVL3
+     *          |               |  LVL3
+     *          |___ LVL2       |  LVL3
+     *                          '  LVL3
+	 */
+    .lvl3_item.last:after {
+		content: "";
+		width: 1px;
+		height: 50%;
+		position: absolute;
+		border-left: dashed #22C55E 1px;
+		left: 2.6rem;
+	}	
+
+
+    .lvl3_item.last {
+        margin-bottom: 2.5rem;
+    }	
+
+
+    /* 
+	 * ----------- LEVEL1 SHOW LEVEL2  ------------------------------------------------------------------------------------------------
+	 */
+
+
+
+
+    /* 
+	 * ----------- LEVEL2 SHOW LEVEL3  ------------------------------------------------------------------------------------------------
+	 */
+
+
+    /* 
+    *  Display the level3 seection
+    */
+    .lvl2_row input:checked ~ .lvl3_col {
+        display:flex;
+    }
+
+    /*
+    *  Give the selected level2 item a different background
+    *  and change its width to 1/3.
+    */
+    .lvl2_row input:checked ~ .lvl2_item {
+        background: #22C55E;
+        color: white;
+        width: 33%;
+    }
+
+    /*
+    *  Give the toggleAll button a :checked background
+    */
+    input#toggleAll:checked + label{
+        background: #22C55E;
+    }
+
+    /* 
+	 * ----------- LEVEL1 HOVER LINKS  ------------------------------------------------------------------------------------------------
+	 */
+    .lvl1_row a:hover > .lvl1_hover {
+        opacity: 100%;
+    }
+    /* 
+	 * ----------- LEVEL2 IMAGE HOVER LINKS  ------------------------------------------------------------------------------------------------
+	 */
+    .lvl2_item a:hover > .lvl2_hover {
+        opacity: 100%;
+    }
+
+    /* 
+	 * ----------- LEVEL3 HOVER LINKS  ------------------------------------------------------------------------------------------------
+	 */
+    a.lvl3_item:hover > .lvl3_hover {
+        opacity: 100%;
+    }
+
+    /* TITLE */
+    .lvl3_item .lvl3_title::before {
+        content: 'Watch Video';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        opacity: 0%;
+        top: 0;
+        left: 0;
+        text-align: left;
+        padding-left: 1rem;
+        position: absolute;
+        background-color: #4ADE80;
+    }
+    a.lvl3_item:hover > .lvl3_title {
+        background-image: none;
+    }
+    a.lvl3_item:hover > .lvl3_title::before {
+        opacity: 100%;
+    }
