@@ -28,12 +28,12 @@ class key
 
             public function category_header()
             {
-                return '<div class="w-full text-center text-gray-600 font-semibold text-sm pr-10">Movement Categories</div>';
+                return '<div class="w-full text-center text-gray-600 font-semibold text-sm">Movement Categories</div>';
             }
 
             public function category_count($count)
             {
-                return '<div class="w-full text-center text-gray-400 font-light text-xs pr-10">'.$count.' total</div>';
+                return '<div class="w-full text-center text-gray-400 font-light text-xs">'.$count.' total</div>';
             }
 
 
