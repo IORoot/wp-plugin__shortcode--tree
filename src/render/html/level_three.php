@@ -1,6 +1,6 @@
 <?php
 
-namespace andyp\tree\html;
+namespace andyp\tree\render\html;
 
 
 class level_three
