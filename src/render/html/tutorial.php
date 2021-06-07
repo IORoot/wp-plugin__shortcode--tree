@@ -3,7 +3,7 @@
 namespace andyp\tree\render\html;
 
 
-class level_three
+class tutorial
 {
 
     public function open_flex_col()
@@ -27,7 +27,7 @@ class level_three
 
                 $link =  '<a href="'.$href.'" ';
                     $link .= 'id="'.$id.'" ';
-                    $link .= 'class="lvl3 lvl3_item lvl3_item_'.$item.' '.$first.' ';
+                    $link .= 'class="lvl3 tutorial tutorial_item_'.$item.' '.$first.' ';
                     $link .= 'relative w-full mb-4 bg-gray-100 rounded-2xl h-16 flex fill-gray-800 ';
                     $link .= 'hover:bg-green-500 hover:text-white hover:fill-white"';
                 $link .= '>';
@@ -54,7 +54,7 @@ class level_three
                         return '<div class="absolute top-5 -left-2 text-green-500">&#9656;</div>';
                     }
 
-                    public function level3_title($name)
+                    public function level3_title($name, $id = null)
                     {
                         return '<div class="lvl3_title font-thin font-xs my-auto text-left flex-1 pl-4 relative">'.$name.'</div>';
                     }

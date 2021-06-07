@@ -47,7 +47,7 @@ class render
         $this->one->set_tree($this->tree);
         $this->one->set_counts($this->counts);
         $this->one->generate();
-        $this->html = $this->one->get_html();
+        $this->html = array_merge($this->html, $this->one->get_html());
     }
 
 

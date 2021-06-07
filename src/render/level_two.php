@@ -14,8 +14,8 @@ class level_two
 
     public function __construct()
     {
-        $this->two   =   new html\level_two;
-        $this->three =   new html\level_three;
+        $this->two   =   new html\series;
+        $this->three =   new html\tutorial;
     }
 
     public function set_tree($tree)

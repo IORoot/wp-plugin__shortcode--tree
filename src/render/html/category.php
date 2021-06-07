@@ -3,7 +3,7 @@
 namespace andyp\tree\render\html;
 
 
-class level_one
+class category
 {
 
     public function open_flex_col()
@@ -33,9 +33,9 @@ class level_one
                     }
 
 
-                    public function open_level1_label($id)
+                    public function open_level1_label($id, $colour = 'green-500')
                     {
-                        return '<label for="'.$id.'" class="lvl1 lvl1_item w-full mb-4 relative bg-gray-200 rounded-2xl h-16 flex p-1 fill-gray-800 hover:bg-green-500 hover:text-white hover:fill-white cursor-pointer transition-all">';
+                        return '<label for="'.$id.'" class="lvl1 lvl1_item w-full mb-4 relative bg-gray-200 rounded-2xl h-16 flex p-1 fill-gray-800 hover:bg-'.$colour.' hover:text-white hover:fill-white cursor-pointer transition-all">';
                     }
 
                     public function close_level1_label()
@@ -64,12 +64,12 @@ class level_one
                                 return $glyph;
                             }
                             
-                            public function level1_title($name, $count)
+                            public function level1_title($name, $count, $subtitle = 'series')
                             {
                                 $title = '<div class="font-thin font-xs my-auto px-2">';
                                 $title .=   $name;
                                 $title .=   '<div class="text-xs w-full text-center">';
-                                $title .=       $count . ' series';
+                                $title .=       $count .' '. $subtitle;
                                 $title .=   '</div>';
                                 $title .= '</div>';
 
@@ -89,10 +89,10 @@ class level_one
                             }
 
                             
-                            public function level1_hover()
+                            public function level1_hover($colour = 'green-500')
                             {
                                 $hover =  '<div class="lvl1_hover absolute top-0 left-0 bg-white w-full h-full opacity-0 rounded inline-block">';
-                                $hover .= '<svg class="fill-green-500 w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
+                                $hover .= '<svg class="fill-'.$colour.' w-6 h-full m-auto"><use xlink:href="#open-external"></use></svg>';
                                 $hover .= '</div>'; 
                                 return $hover;
                             }

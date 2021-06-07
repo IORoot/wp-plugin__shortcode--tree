@@ -12,11 +12,6 @@ class level_three
     private $values = [];
     private $html   = [];
 
-    public function __construct()
-    {
-        $this->three = new html\level_three;
-    }
-
     public function set_tree($tree)
     {
         $this->tree = $tree;
@@ -39,6 +34,7 @@ class level_three
 
     public function generate()
     {
+        $this->determine_posttype();
 
         $this->html[] = $this->three->open_level3_box(
             $this->values['level_three_value']['post_name'], 
@@ -52,11 +48,17 @@ class level_three
         $this->html[] = $this->three->level3_arrowhead($this->values['level_three_key']);
         $this->html[] = $this->three->level3_bullet();
         $this->html[] = $this->three->level3_count($this->values['level_three_key']);
-        $this->html[] = $this->three->level3_title($this->values['level_three_value']['post_title']);
+        $this->html[] = $this->three->level3_title($this->values['level_three_value']['post_title'], $this->values["level_three_value"]["ID"]);
         $this->html[] = $this->three->level3_hover();
         $this->html[] = $this->three->level3_image($this->values['level_three_value']['ID']);
 
         $this->html[] = $this->three->close_level3_box();
+    }
+
+    private function determine_posttype()
+    {
+        $ns = '\\andyp\\tree\\render\\html\\'.$this->values["level_three_value"]["post_type"];
+        $this->three = new $ns;
     }
 
 }

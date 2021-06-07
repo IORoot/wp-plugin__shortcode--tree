@@ -1,0 +1,58 @@
+    /* 
+    * ----------- DEMONSTRATION LEVEL 1 <--> LEVEL 3 ------------------------------------------------------------------------------------------------
+    */
+
+	/* 
+	 * Full-width horizontal line
+	 * Single - only one 2nd level in list
+	 * first  - more than one in list. this is first.
+     * 
+     *      LVL1 -------- LVL2
+	 */
+	.demonstration.single:before,
+	.demonstration.first:before {
+		content: "";
+		width: 5rem;
+		position: absolute;
+        border-top: dashed #3B82F6 1px;
+		left: -5rem;
+		top: 2rem;
+	}	
+
+    /* 
+	 * ----------- LEVEL3 HOVER LINKS  ------------------------------------------------------------------------------------------------
+	 */
+    a.demonstration:hover > .lvl3_hover {
+        opacity: 100%;
+    }
+
+    /* TITLE */
+    .demonstration .lvl3_title::before {
+        content: 'Watch Demo';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        opacity: 0%;
+        top: 0;
+        left: 0;
+        text-align: left;
+        padding-left: 1rem;
+        position: absolute;
+        background-color: #3B82F6;
+    }
+    a.demonstration:hover > .lvl3_title {
+        background-image: none;
+    }
+    a.demonstration:hover > .lvl3_title::before {
+        opacity: 100%;
+    }
+
+    /* 
+	 * ----------- JS  ------------------------------------------------------------------------------------------------
+	 */
+	/*
+    *  Give the toggleAll button a :checked background
+    */
+    input#toggleAll:checked + label{
+        background: #3B82F6;
+    }

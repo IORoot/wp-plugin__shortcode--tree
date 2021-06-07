@@ -147,6 +147,10 @@ class initialise
     {
         wp_register_style(  'andyp_tree_css', ANDYP_TREE_URL . '/src/css/style.css' ); 
         wp_enqueue_style( 'andyp_tree_css');
+        wp_register_style(  'andyp_tutorial_css', ANDYP_TREE_URL . '/src/css/tutorial.css' ); 
+        wp_enqueue_style( 'andyp_tutorial_css');
+        wp_register_style(  'andyp_demonstration_css', ANDYP_TREE_URL . '/src/css/demonstration.css' ); 
+        wp_enqueue_style( 'andyp_demonstration_css');
         wp_register_script(  'andyp_tree_toggle_checkboxes', ANDYP_TREE_URL . '/src/js/toggle_checkboxes.js' ); 
         wp_enqueue_script( 'andyp_tree_toggle_checkboxes');
     }

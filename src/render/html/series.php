@@ -3,7 +3,7 @@
 namespace andyp\tree\render\html;
 
 
-class level_two
+class series
 {
 
     public function open_flex_col()
