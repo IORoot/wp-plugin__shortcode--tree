@@ -50,7 +50,4 @@ class render
         $this->html = array_merge($this->html, $this->one->get_html());
     }
 
-
-
-
 }

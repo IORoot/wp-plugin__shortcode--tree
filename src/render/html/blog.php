@@ -3,7 +3,7 @@
 namespace andyp\tree\render\html;
 
 
-class demonstration
+class blog
 {
 
     public function open_flex_col()
@@ -26,7 +26,7 @@ class demonstration
                 $link = '<div class="w-1/4 pr-4 mb-4">';
                 $link .=  '<a href="'.$href.'" ';
                     $link .= 'id="'.$id.'" ';
-                    $link .= 'class="lvl3 demonstration demonstration_item_'.$item.' '.$first.' ';
+                    $link .= 'class="lvl3 blog blog_item_'.$item.' '.$first.' ';
                     $link .= 'relative w-full bg-gray-100 rounded-2xl h-16 flex fill-gray-800 ';
                     $link .= 'hover:bg-blue-500 hover:text-white hover:fill-white"';
                 $link .= '>';
@@ -57,23 +57,6 @@ class demonstration
                         $parts = explode(' - ', $name);
                         return '<div class="lvl3_title font-thin my-auto text-left text-sm flex-1 pl-4 relative">'.$parts[1].'</div>';
                     }
-
-                    // public function level3_title($name, $id = null)
-                    // {
-                    //     $parts = explode(' - ', $name);
-
-                    //     $html = '<div class="w-full flex flex-col pl-2 py-2">';
-                    //         $html .= '<div class="lvl3_title font-thin font-xs my-auto text-left text-sm flex-1 relative">'.$parts[1].'</div>';
-                    //         $html .= '<div class="w-full flex">';
-                    //         foreach(get_the_terms($id, 'demonstration_tags') as $tag) {
-                    //             $html .= '<div class="inline-block font-light text-gray-400 text-xs h-5 mr-1">' . $tag->name . '. </div>';
-                    //         }
-                    //         $html .= '</div>';
-
-                    //     $html .= '</div>';
-
-                    //     return $html;
-                    // }
 
                     public function level3_count($key)
                     {
