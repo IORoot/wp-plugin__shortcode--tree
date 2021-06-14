@@ -8,7 +8,7 @@ class key
 
     public function open_header()
     {
-        return '<div class="header flex h-full w-full absolute -top-20">';
+        return '<div class="header hidden md:flex h-full w-full absolute -top-20">';
     }
 
     public function close_header()

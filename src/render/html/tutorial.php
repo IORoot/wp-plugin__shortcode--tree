@@ -8,7 +8,7 @@ class tutorial
 
     public function open_flex_col()
     {
-        return '<div class="lvl3 lvl3_col w-full flex-col ml-20 hidden transition-all">';
+        return '<div class="lvl3 lvl3_col w-full flex-col pl-4 lg:ml-20 hidden transition-all">';
     }
 
     public function close_flex_col()
@@ -45,7 +45,7 @@ class tutorial
                     public function level3_node($key)
                     {
                         if ($key != 0){return;}
-                        return '<div class="absolute top-5 text-black" style="left:-5.25rem;">&#10687;</div>';
+                        return '<div class="absolute top-5 text-black" style="left:-6.25rem;">&#10687;</div>';
                     }
 
                     public function level3_arrowhead($key)
@@ -56,18 +56,18 @@ class tutorial
 
                     public function level3_title($name, $id = null)
                     {
-                        return '<div class="lvl3_title font-thin font-xs my-auto text-left flex-1 pl-4 relative">'.$name.'</div>';
+                        return '<div class="lvl3_title font-thin font-xs my-auto text-left flex-1 pl-6 md:pl-4 relative">'.$name.'</div>';
                     }
 
                     public function level3_count($key)
                     {
                         $key++;
-                        return '<div class="bg-gray-300 w-10 text-center text-white ml-20 my-auto">'.$key.'</div>';
+                        return '<div class="bg-gray-300 w-10 text-center text-white ml-20 my-auto hidden md:block">'.$key.'</div>';
                     }
 
                     public function level3_bullet()
                     {
-                        return '<div class="absolute top-5 left-9 z-10">&#10687;</div>';
+                        return '<div class="absolute top-5 left-1 lg:left-9 z-10">&#10687;</div>';
                     }
 
                     public function level3_hover()
@@ -81,7 +81,7 @@ class tutorial
                     public function level3_image($post_id)
                     {
                         $url = get_the_post_thumbnail_url($post_id);
-                        return '<div class="lvl3_image bg-no-repeat bg-cover bg-center w-28 h-14 m-1 rounded-2xl lazyload" style="background-image:url(\''.$url.'\')"></div>';
+                        return '<div class="lvl3_image bg-no-repeat bg-cover bg-center w-20 md:w-28 h-14 m-1 rounded-2xl lazyload" style="background-image:url(\''.$url.'\')"></div>';
                     }
 
                     

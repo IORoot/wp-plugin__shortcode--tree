@@ -18,7 +18,7 @@ class category
 
             public function open_flex_row($row, $last)
             {
-                return '<div class="lvl1 lvl1_row lvl1_row_'.$row.' '.$last.' flex mb-10">';
+                return '<div class="lvl1 lvl1_row lvl1_row_'.$row.' '.$last.' flex flex-col lg:flex-row mb-10">';
             }
 
             public function close_flex_row()

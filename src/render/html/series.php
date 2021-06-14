@@ -24,7 +24,7 @@ class series
                 if ($row == 0){$first = 'first';}   
                 if ($single != ''){$first = $single;}
 
-                return '<div class="lvl2 lvl2_row lvl2_row_'.$row.' '.$first.' flex relative">';
+                return '<div class="lvl2 lvl2_row lvl2_row_'.$row.' '.$first.' flex flex-col lg:flex-row relative">';
             }
 
             public function close_flex_row()

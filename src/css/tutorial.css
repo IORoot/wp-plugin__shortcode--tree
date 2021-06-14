@@ -73,14 +73,30 @@
 	.tutorial.single:before,
 	.tutorial.first:before {
 		content: "";
-		width: 5rem;
+		width: 6rem;
 		position: absolute;
 		border-top: dashed #22C55E 1px;
-		left: -5rem;
+		left: -6rem;
 		top: 2rem;
 	}	
 
 
+	/*
+	 * vertical line LEFT POSITION
+     *
+     * LVL1 -------- LVL2 ------|  LVL3
+     *          |               |  LVL3
+     *          |___ LVL2       |  LVL3
+     *                          '  LVL3
+	 */
+	.tutorial:after {
+		left: 0.6rem;
+	}
+	@media (min-width: 1024px){
+		.tutorial:after {
+			left: 2.6rem;
+		}
+	}
 
 	/*
 	 * Full Height vertical line
@@ -96,7 +112,6 @@
 		height: 100%;
 		position: absolute;
 		border-left: dashed #22C55E 1px;
-		left: 2.6rem;
 		top: 2rem;
     }
 
@@ -115,7 +130,6 @@
 		height: 200%;
 		position: absolute;
 		border-left: dashed #22C55E 1px;
-		left: 2.6rem;
 	}
 
 	/*
@@ -132,7 +146,6 @@
 		height: 50%;
 		position: absolute;
 		border-left: dashed #22C55E 1px;
-		left: 2.6rem;
 	}	
 
 

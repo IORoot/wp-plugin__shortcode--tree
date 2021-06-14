@@ -23,7 +23,7 @@ class demonstration
                 if ($item == 0){$first = 'first';}
                 if ($single != ''){$first = $single;}
 
-                $link = '<div class="w-1/4 pr-4 mb-4">';
+                $link = '<div class="w-1/2 md:w-1/4 pr-1 md:pr-4 mb-4">';
                 $link .=  '<a href="'.$href.'" ';
                     $link .= 'id="'.$id.'" ';
                     $link .= 'class="lvl3 demonstration demonstration_item_'.$item.' '.$first.' ';
@@ -55,7 +55,7 @@ class demonstration
                     {
                         
                         $parts = explode(' - ', $name);
-                        return '<div class="lvl3_title font-thin my-auto text-left text-sm flex-1 pl-4 relative">'.$parts[1].'</div>';
+                        return '<div class="lvl3_title font-thin my-auto text-left text-xs md:text-sm flex-1 pl-3 md:pl-4 relative">'.$parts[1].'</div>';
                     }
 
                     // public function level3_title($name, $id = null)
@@ -78,7 +78,7 @@ class demonstration
                     public function level3_count($key)
                     {
                         $key++;
-                        return '<div class="bg-gray-200 w-10 h-16 text-gray-500 font-light text-center rounded-l-2xl py-5 text-sm">'.$key.'</div>';
+                        return '<div class="bg-gray-200 w-10 h-16 text-gray-500 font-light text-center rounded-l-2xl py-5 text-sm hidden md:block">'.$key.'</div>';
                     }
 
                     public function level3_bullet()
@@ -97,7 +97,7 @@ class demonstration
                     public function level3_image($post_id)
                     {
                         $url = get_the_post_thumbnail_url($post_id);
-                        return '<div class="lvl3_image bg-no-repeat bg-cover bg-center w-14 h-14 m-1 rounded-2xl lazyload" style="background-image:url(\''.$url.'\')"></div>';
+                        return '<div class="lvl3_image bg-no-repeat bg-cover bg-center w-14 h-14 m-1 rounded-xl md:rounded-2xl lazyload" style="background-image:url(\''.$url.'\')"></div>';
                     }
 
 }

@@ -13,10 +13,13 @@
 	/*
 	* Resize level1 to 1/6th and give margin.
 	*/
-	.lvl1_row input.lvl1_checkbox:checked + label {
-        width: calc(100%/6);
-		margin-right: 5rem;
-    }	
+    @media (min-width: 1024px){
+        .lvl1_row input.lvl1_checkbox:checked + label {
+            width: calc(100%/6);
+            margin-right: 5rem;
+        }
+    }
+		
 
 
 
@@ -39,7 +42,11 @@
     .lvl2_row input:checked ~ .lvl2_item {
         background: #22C55E;
         color: white;
-        width: 33%;
+    }
+    @media (min-width: 1024px){
+        .lvl2_row input:checked ~ .lvl2_item {
+            width: 33%;
+        }
     }
 
     /* 
