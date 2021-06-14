@@ -14,10 +14,14 @@ const lvl1_rows = document.querySelectorAll('.lvl1_row');
 for (const lvl1_row of lvl1_rows) {
     lvl1_row.addEventListener('click', function(event) {
         var categories = document.querySelector('.header_1');
-        categories.classList.remove('flex-1');
+        if (categories !== null){
+            categories.classList.remove('flex-1');
+        }
     
         var series = document.querySelector('.header_2');
-        series.classList.remove('hidden');
+        if (series !== null){
+            series.classList.remove('hidden');
+        }
     })
 }
 
@@ -28,6 +32,8 @@ const lvl2_rows = document.querySelectorAll('.lvl2_row');
 for (const lvl2_row of lvl2_rows) {
     lvl2_row.addEventListener('click', function(event) {
         var episodes = document.querySelector('.header_3');
-        episodes.classList.remove('hidden');
+        if (episodes !== null){
+            episodes.classList.remove('hidden');
+        }
     })
 }
