@@ -36,12 +36,13 @@ class level_three
     {
         $this->determine_posttype();
 
+        
         $this->html[] = $this->three->open_level3_box(
             $this->values['level_three_value']['post_name'], 
             $this->values['level_three_loop_count'], 
             $this->values['level_three_last'], 
             $this->values['level_three_single'],
-            $this->values['level_three_value']['guid']
+            get_permalink($this->values['level_three_value']['ID'])
         );
 
         $this->html[] = $this->three->level3_node($this->values['level_three_key']);
